@@ -1,0 +1,85 @@
+cabal-version:       2.4
+name:                cirqut-server
+version:             0.0.1.0
+synopsis:            A self-hosted multi-user project management tool
+-- description:
+homepage:            https://github.com/higherkinded/cirqut-server
+-- bug-reports:
+license:             BSD-3-Clause
+license-file:        LICENSE
+author:              higherkinded
+maintainer:          higherkinded@protonmail.com
+copyright:           © higherkinded
+-- category:
+extra-source-files:  CHANGELOG.md
+
+
+executable cirqut-server
+  main-is:             Main.hs
+
+  other-modules:    Application.Common.About
+                  , Application.Common.Headers
+                  , Application.Configuration
+                  , Application.Configuration.Discover
+                  , Application.Configuration.Network
+                  , Application.Routes
+                  , Application.Routes.About
+                  , Application.Routes.About.Credits
+                  , Application.Routes.Api
+                  , Application.Routes.Root
+                  , Typeclasses.Entity
+                  , Types.Board
+                  , Types.EntityT
+                  , Types.Meta
+                  , Types.Misc.Color
+                  , Types.Permissions
+                  , Types.Project
+                  , Types.Realm
+                  , Types.Resource
+                  , Types.ResponseT
+                  , Types.ResponseT.Status
+                  , Types.Role
+                  , Types.Row
+                  , Types.SingularT
+                  , Types.User
+                  , Util.Common.ByteString
+                  , Util.Common.Request
+                  , Util.Common.Response
+                  , Util.Common.Text
+                  , Util.Log
+                  , Util.Sugar
+
+  other-extensions: DeriveAnyClass
+                  , DeriveGeneric
+                  , FlexibleContexts
+                  , FlexibleInstances
+                  , GADTs
+                  , MultiParamTypeClasses
+                  , OverloadedStrings
+                  , StandaloneDeriving
+                  , TypeApplications
+                  , TypeFamilies
+                  , TypeSynonymInstances
+
+  build-depends:    base                 >=4.12.0.0
+                  , aeson                >=1.4.0.0
+                  , beam-core
+                  , beam-migrate
+                  , beam-postgres
+                  , bytestring           >=0.10.8.2 && < 0.11
+                  , case-insensitive     >=1.1
+                  , comonad
+                  , containers
+                  , directory            >=1.3.0.0
+                  , http-types           ==0.12.3
+                  , split                >=0.2.3.0
+                  , text                 >=1.2.3.1
+                  , time                 >=1.8
+                  , uuid
+                  , wai                  >=3.2
+                  , warp                 >=3.2
+
+  hs-source-dirs:      src
+
+  default-language:    Haskell2010
+

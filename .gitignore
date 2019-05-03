@@ -1,0 +1,7 @@
+*#*
+*~*
+*.hi
+*.o
+*.save*
+dist*/
+.ghc.environment*
